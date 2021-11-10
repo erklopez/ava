@@ -3,16 +3,29 @@
 #Libraries
 library(rvest)
 library(xml2)
+library(httr)
 library(plyr)
  
 #Load Data
 
 #   Website
-url<-"https://www.ecfr.gov/cgi-bin/text-idx?c=ecfr&sid=057f99d792668247a3c45b4699417291&rgn=div5&view=text&node=27:1.0.1.1.7&idno=27#sp27.1.9.c"
+url<-"https://www.ecfr.gov/current/title-27/chapter-I/subchapter-A/part-9/subpart-C"
+url_f<-"https://www.ecfr.gov/api/renderer/v1/content/enhanced/2021-11-08/title-27?chapter=I&part=9&subchapter=A&subpart=C"
 
 #   Scrape website
 
-ecfr<-read_html(url)
+ecfr <- GET(url_f, add_headers('user-agent' = 'UC DAVIS DATALAB EMPLOYEE ([[erklopez@ucdavis.edul]])')) %>% read_html() #Read HTML
+
+
+# New code ----------------------------------------------------------------
+
+
+
+ava_name<-xml_find_all(ecfr, "//*[contains(text(), ' The name of the viticultural area described in this section is ')]") 
+ava_name<-xml_find_all(ecfr, "//*[@class = 'paragraph-hierarchy']")
+ava_name<-xml_find_all(ecfr, "//*[contains(data-title, 'a')]") 
+
+att<-xml_find_all(ecfr, "/html/body/h8")
 
 #Get all of the H2 tags
 h2<-html_nodes(ecfr, "h2")
