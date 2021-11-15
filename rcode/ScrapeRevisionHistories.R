@@ -8,7 +8,7 @@ library(plyr)
 #Load Data
 
 #   Website
-url<-"https://www.ecfr.gov/cgi-bin/text-idx?c=ecfr&sid=057f99d792668247a3c45b4699417291&rgn=div5&view=text&node=27:1.0.1.1.7&idno=27#sp27.1.9.c"
+url<-"https://www.ecfr.gov/current/title-27/chapter-I/subchapter-A/part-9/subpart-C"
 
 #   Scrape website
 
