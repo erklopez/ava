@@ -8,11 +8,33 @@ library(plyr)
 #Load Data
 
 #   Website
-url<-"https://www.ecfr.gov/current/title-27/chapter-I/subchapter-A/part-9/subpart-C"
+url<-"https://www.ecfr.gov/api/renderer/v1/content/enhanced/2021-11-08/title-27?chapter=I&part=9&subchapter=A&subpart=C"
 
 #   Scrape website
 
 ecfr<-read_html(url)
+
+
+# New code  ---------------------------------------------------------------
+
+# h8<- html_nodes(ecfr, "h8") #extracting all h8 nodes which contains the information of the viticulture areas
+# ^ not useful, the nodes only contain the title and not the data underneat it
+
+sections<- xml_find_all(ecfr, "//*[@class = 'section']") #Extracting the sections that contain all the info of a single viticulture area
+
+names<-sections%>%html_nodes("h8")%>%html_text() # Extracting names from the sectionsby extracting headings (h8) and then extracting the text inside the attributes
+
+names<-names[-1]%>%as.data.frame()#Subtracting the General Section which will not be needed
+
+revision.string<-xml_find_all(sections, "//*[@class = 'citation']")%>%html_text()
+
+revision.string<-as.data.frame(revision.string)
+
+
+
+
+# Old Code ----------------------------------------------------------------
+
 
 #Get all of the H2 tags
 h2<-html_nodes(ecfr, "h2")
