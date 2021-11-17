@@ -3,13 +3,13 @@
 #Libraries
 library(rvest)
 library(xml2)
-library(plyr)
+library(dplyr)
+library(tidyr)
  
 #Load Data
 
 #   Website
-url<-"https://www.ecfr.gov/api/renderer/v1/content/enhanced/2021-11-08/title-27?chapter=I&part=9&subchapter=A&subpart=C"
-
+url<-"https://www.ecfr.gov/api/renderer/v1/content/enhanced/2021-12-31/title-27?chapter=I&part=9&subchapter=A&subpart=C"
 #   Scrape website
 
 ecfr<-read_html(url)
@@ -17,19 +17,31 @@ ecfr<-read_html(url)
 
 # New code  ---------------------------------------------------------------
 
-# h8<- html_nodes(ecfr, "h8") #extracting all h8 nodes which contains the information of the viticulture areas
-# ^ not useful, the nodes only contain the title and not the data underneat it
-
+# Names
 sections<- xml_find_all(ecfr, "//*[@class = 'section']") #Extracting the sections that contain all the info of a single viticulture area
-
 names<-sections%>%html_nodes("h8")%>%html_text() # Extracting names from the sectionsby extracting headings (h8) and then extracting the text inside the attributes
+names<-names[-c(1,260,261)]%>%as.data.frame()#Subtracting the General Section which will not be needed
 
-names<-names[-1]%>%as.data.frame()#Subtracting the General Section which will not be needed
+# Separating section and names.
+# section<-substr(names,1,6)
+# section<-trimws(section, which="both", whitespace = "[\\h\\v]")
+# ava.name<-substr(names, 7, 100)
+# ava.name<-gsub("\\.", "", ava.name)
+# ava.name<-trimws(ava.name, which="both", whitespace = "[\\h\\v]")
 
-revision.string<-xml_find_all(sections, "//*[@class = 'citation']")%>%html_text()
+# Revision Strings
+revision.string<-xml_find_all(sections, "//*[@class = 'citation']|//*[@class = 'section-authority']")%>%html_text() #grabs the text from dividers with classes
+# citation or section-authority because 9.127 has an error on the html that makes it have no classs instead of the class citation.
+revision.string<-as.data.frame(revision.string) # Makes the revision strings into a df
 
-revision.string<-as.data.frame(revision.string)
 
+ava_notclean_df<-cbind.data.frame(names, revision.string) # Binds the names and revision.strings into a single df
+colnames(ava_notclean_df)<- c("names","revision.string")
+
+# Cleaning ava_notclean_df
+
+ava_notclean_df<-ava_notclean_df %>% 
+  separate(col = names, sep = "7", into = c("section","name"))
 
 
 
