@@ -5,6 +5,7 @@ library(rvest)
 library(xml2)
 library(dplyr)
 library(tidyr)
+library(stringr)
  
 #Load Data
 
@@ -40,9 +41,21 @@ colnames(ava_notclean_df)<- c("names","revision.string")
 
 # Cleaning ava_notclean_df
 
-ava_notclean_df<-ava_notclean_df %>% 
-  separate(col = names, sep = "7", into = c("section","name"))
+names_sections<- names %>% mutate( section = str_replace(names$., "^(.+ .+) (.+ .+)$", "\\1"),
+                                   name = str_replace(names$., "^(.+ .+) (.+ .+)$", "\\2"), )
 
+# names_sections <- names %>%
+#   separate(col = names$., into=c("sec","section","name1","name2", "name3", "name4", "name5", "name6", "name7"),sep= " ") %>%
+#   unite(col = "section",sec, section, sep=" ") %>%
+#   unite(col = "name", name1,name2, name3, name4, name5, name6, name7, sep=" ") 
+# 
+# for (i in names){
+#   if (str_count(i, " ") == 2){
+#     section = str_replace(names$.[i], "^(.+) (.+)$", "\\1")
+#     name = str_replace(names$.[i], "^(.+) (.+)$", "\\2") 
+#   }
+#   
+# }
 
 
 # Old Code ----------------------------------------------------------------
