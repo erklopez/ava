@@ -5,6 +5,7 @@
 		"just-the-docs-default.scss",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		"../../../AppData/Local/Temp/jekyll-remote-theme-20220211-4388-73pisz/_sass/support/support.scss",
 		"../../../AppData/Local/Temp/jekyll-remote-theme-20220211-4388-73pisz/_sass/support/_variables.scss",
 		"../../../AppData/Local/Temp/jekyll-remote-theme-20220211-4388-73pisz/_sass/support/_functions.scss",
@@ -72,6 +73,16 @@
 		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/support/mixins/_buttons.scss",
 		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/support/mixins/_typography.scss",
 		"_sass/color_schemes/ucdcolors.scss",
+=======
+		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/support/support.scss",
+		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/support/_variables.scss",
+		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/support/_functions.scss",
+		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/support/mixins/mixins.scss",
+		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/support/mixins/_layout.scss",
+		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/support/mixins/_buttons.scss",
+		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/support/mixins/_typography.scss",
+		"_sass/color_schemes/ucdcolors.scss",
+>>>>>>> parent of f5dd331 (Working version)
 		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/modules.scss",
 		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/vendor/normalize.scss/normalize.scss",
 		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/base.scss",
@@ -92,6 +103,9 @@
 		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/utilities/_spacing.scss",
 		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/print.scss",
 		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/custom/custom.scss"
+<<<<<<< HEAD
+>>>>>>> parent of f5dd331 (Working version)
+=======
 >>>>>>> parent of f5dd331 (Working version)
 	],
 	"sourcesContent": [
