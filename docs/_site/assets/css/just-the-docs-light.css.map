@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		"../../../AppData/Local/Temp/jekyll-remote-theme-20220211-4388-73pisz/_sass/support/support.scss",
 		"../../../AppData/Local/Temp/jekyll-remote-theme-20220211-4388-73pisz/_sass/support/_variables.scss",
 		"../../../AppData/Local/Temp/jekyll-remote-theme-20220211-4388-73pisz/_sass/support/_functions.scss",
@@ -67,6 +68,8 @@
 =======
 =======
 >>>>>>> parent of f5dd331 (Working version)
+=======
+>>>>>>> parent of 0d34200 (Merge pull request #781 from elistockwell/docs)
 		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/support/support.scss",
 		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/support/_variables.scss",
 		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/support/_functions.scss",
@@ -96,9 +99,12 @@
 		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/print.scss",
 		"../../../../AppData/Local/Temp/jekyll-remote-theme-20220209-12152-upe06a/_sass/custom/custom.scss"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of f5dd331 (Working version)
 =======
 >>>>>>> parent of f5dd331 (Working version)
+=======
+>>>>>>> parent of 0d34200 (Merge pull request #781 from elistockwell/docs)
 	],
 	"sourcesContent": [
 		"\n@import \"./support/support\";\n@import \"./color_schemes/light\";\n@import \"./modules\";\n@import \"./custom/custom\";\n\n\n",
